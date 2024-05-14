@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const app = express()
+
+app.use(express.json())
 
 // ??? List of quotes
-let quoteList = {};
+let quoteList = [];
 
 // ??? GET request returns information
 router.get('/quotes', (req, res) => {
@@ -12,15 +15,20 @@ router.get('/quotes', (req, res) => {
 });
 
 // ??? POST request save user input
-router.post('/', (req, res) => {
+router.post('/quotes', (req, res) => {
     console.log('POST Request made for /quotes');
     // Any data we send from the client is available
     // as a property of req.body.
     console.log(req.body);
     let quoteToAdd = req.body;
-    quotesList.push(quoteToAdd);
+    quoteList.push(quoteToAdd);
     res.sendStatus(201);
 });
+
+app.use('/', router)
+app.listen(3000, () => {
+    console.log("server running on port 3000");
+})
 
 // PUT request update information
 

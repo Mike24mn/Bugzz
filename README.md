@@ -16,6 +16,27 @@ npm start
 
 ## Error List
 
+Bug #1 in client.js 
+
+lines 16 through 24 in the client.js contained several errors, including loop variable outside of the loop and the wrong tags, it was using a p tag originally
+
+Bug # 2 in client.js
+
+line 41, axios post method did not use right data type, it should be an object type.
+ 
+// End client.js and index.html fixes (2 total bugs)
+
+ Bug # 3 type in the router.js file, changed quoteslist to quotelist as there was a type/mispelling, also missing /quotes in argument
+
+Bug # 4 Changed quoteList to array type with proper [] syntax
+and added body parser via app.use above quote list.
+
+// End router.js fixes (4 total bugs)
+
+Bug # 7
+
+Missing server 
+
 TODO: Add the error here followed by the line of code you fixed.
 
 ### Bug 0
